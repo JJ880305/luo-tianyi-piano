@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5fbfb" />
+    <meta
+      name="description"
+      content="洛天依人聲鋼琴：用滑鼠、觸控或電腦鍵盤演奏 C4 到 G5 的人聲採樣。"
+    />
+    <title>洛天依鋼琴</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="eyebrow">LUO TIANYI VOCAL PIANO</div>
+        <h1>洛天依鋼琴</h1>
+        <p>點擊琴鍵，讓天依唱給你聽♪</p>
+      </header>
+
+      <section class="instrument" aria-label="洛天依人聲鋼琴">
+        <div class="toolbar">
+          <div class="mode-switch" role="group" aria-label="琴鍵標示方式">
+            <button class="mode-button is-selected" type="button" data-label-mode="note" aria-pressed="true">
+              音名
+            </button>
+            <button class="mode-button" type="button" data-label-mode="solfege" aria-pressed="false">
+              唱名
+            </button>
+          </div>
+
+          <div class="toolbar-actions">
+            <label class="volume-control" for="master-volume">
+              <span>音量</span>
+              <input
+                id="master-volume"
+                type="range"
+                min="0"
+                max="100"
+                value="80"
+                aria-label="Master Volume"
+              />
+              <output id="volume-value" for="master-volume">80%</output>
+            </label>
+            <button class="stop-button" id="stop-all" type="button">停止全部聲音</button>
+          </div>
+        </div>
+
+        <div class="piano-scroll" aria-label="鋼琴鍵盤，可水平捲動">
+          <div class="piano" id="piano" role="group" aria-label="C4 到 G5 的白鍵鋼琴"></div>
+        </div>
+
+        <div class="instrument-footer">
+          <p id="audio-status" role="status" aria-live="polite">正在準備音色…</p>
+          <p class="keyboard-hint">電腦鍵盤：A S D F G H J K L ; ' Enter</p>
+        </div>
+      </section>
+
+      <noscript>請啟用 JavaScript 以演奏鋼琴。</noscript>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
